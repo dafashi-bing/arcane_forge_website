@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "BingAI Studio",
+  name: "Arcane Forge",
   formspreeId: "xvgzjyyo",
   // You can add other global config values here
   // For example:

@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import "styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "BingAI Studio", 
+  title: "Arcane Forge", 
   description: "The All-in-One AI Platform for Game Development",
 };
 

@@ -6,7 +6,7 @@ export default function Header() {
     <header className="bg-white dark:bg-black shadow-sm dark:border-b dark:border-gray-800">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <span className="text-xl dark:text-gray-100">BingAI Studio</span>
+          <span className="text-xl dark:text-gray-100">Arcane Forge</span>
         </div>
         <nav className="flex items-center">
           <ul className="flex space-x-2 mr-2">
