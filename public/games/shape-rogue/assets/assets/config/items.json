@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "id": "health_potion",
+      "name": "Health Potion",
+      "cost": 30,
+      "description": "Restore 50 HP",
+      "type": "consumable",
+      "effect": {
+        "type": "heal",
+        "value": 50
+      }
+    },
+    {
+      "id": "dash_mastery",
+      "name": "Dash Mastery",
+      "cost": 40,
+      "description": "-25% Dash Cooldown",
+      "type": "upgrade",
+      "effect": {
+        "type": "dash_cooldown_multiplier",
+        "value": 0.75
+      }
+    },
+    {
+      "id": "max_health_up",
+      "name": "Max Health Up",
+      "cost": 50,
+      "description": "+25 Max Health",
+      "type": "upgrade",
+      "effect": {
+        "type": "max_health_increase",
+        "value": 25
+      }
+    },
+    {
+      "id": "attack_speed_up",
+      "name": "Attack Speed Up",
+      "cost": 60,
+      "description": "+25% Attack Speed",
+      "type": "upgrade",
+      "effect": {
+        "type": "attack_speed_multiplier",
+        "value": 0.25
+      }
+    },
+    {
+      "id": "speed_boost",
+      "name": "Speed Boost",
+      "cost": 40,
+      "description": "+25% Movement Speed",
+      "type": "upgrade",
+      "effect": {
+        "type": "speed_multiplier",
+        "value": 0.25
+      }
+    }
+  ]
+} 
