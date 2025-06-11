@@ -1,0 +1,103 @@
+{
+  "wave_config": {
+    "max_waves": 5,
+    "wave_duration": 30.0
+  },
+  "shop_config": {
+    "price_scaling": {
+      "wave_multiplier": 0.2,
+      "random_variance": 0.05,
+      "roll_cost": 10,
+      "description": "Shop prices scale with wave progression. wave_multiplier determines how much prices increase per wave (0.2 = 20% per wave). random_variance adds ±5% random price variation. roll_cost is the base cost to reroll shop items."
+    }
+  },
+  "enemy_config": {
+    "chaser": {
+      "movement_speed": 60.0,
+      "retry_drop_chance": 0.05,
+      "description": "Fast melee enemy that charges at the player"
+    },
+    "shooter": {
+      "movement_speed": 30.0,
+      "retry_drop_chance": 0.05,
+      "description": "Ranged enemy that maintains distance while shooting"
+    },
+    "shielded_chaser": {
+      "movement_speed": 60.0,
+      "retry_drop_chance": 0.20,
+      "description": "Armored melee enemy with shield protection"
+    }
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "name": "First Contact",
+      "description": "Basic enemies to get you started",
+      "enemy_types": ["chaser"],
+      "spawn_weights": {
+        "chaser": 1.0
+      },
+      "spawn_interval": 2.5,
+      "spawn_count": 1
+    },
+    {
+      "wave": 2,
+      "name": "Ranged Assault",
+      "description": "Enemies that shoot from a distance",
+      "enemy_types": ["shooter"],
+      "spawn_weights": {
+        "shooter": 1.0
+      },
+      "spawn_interval": 2.0,
+      "spawn_count": 1
+    },
+    {
+      "wave": 3,
+      "name": "Mixed Forces",
+      "description": "A combination of enemy types",
+      "enemy_types": ["chaser", "shooter"],
+      "spawn_weights": {
+        "chaser": 0.6,
+        "shooter": 0.4
+      },
+      "spawn_interval": 1.8,
+      "spawn_count": 2
+    },
+    {
+      "wave": 4,
+      "name": "Heavy Assault",
+      "description": "More aggressive mixed enemies",
+      "enemy_types": ["chaser", "shooter"],
+      "spawn_weights": {
+        "chaser": 0.5,
+        "shooter": 0.5
+      },
+      "spawn_interval": 1.5,
+      "spawn_count": 2
+    },
+    {
+      "wave": 5,
+      "name": "Final Stand",
+      "description": "The ultimate challenge",
+      "enemy_types": ["chaser", "shooter", "shielded_chaser"],
+      "spawn_weights": {
+        "chaser": 0.35,
+        "shooter": 0.55,
+        "shielded_chaser": 0.1
+      },
+      "spawn_interval": 1.2,
+      "spawn_count": 3
+    }
+  ],
+  "enemy_rewards": {
+    "chaser": {
+      "coins": 10
+    },
+    "shooter": {
+      "coins": 20
+    },
+    "shielded_chaser": {
+      "coins": 30
+    }
+  }
+} 

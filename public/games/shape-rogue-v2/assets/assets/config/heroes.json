@@ -1,0 +1,106 @@
+{
+  "heroes": [
+    {
+      "id": "circle",
+      "name": "Circle",
+      "shape": "circle",
+      "move_speed": 320,
+      "health": 100,
+      "ability": {
+        "name": "Rolling Surge",
+        "description": "Unleash a high-speed roll that damages all enemies in your path.",
+        "cooldown": 6.0,
+        "type": "dash_damage",
+        "damage": 40,
+        "range": 200
+      },
+      "color": "0xFF4CAF50"
+    },
+    {
+      "id": "triangle",
+      "name": "Triangle",
+      "shape": "triangle",
+      "move_speed": 290,
+      "health": 90,
+      "ability": {
+        "name": "Spike Shot",
+        "description": "Fire a massive triangle projectile that travels through the entire screen and eliminates any enemy it touches.",
+        "cooldown": 5.0,
+        "type": "piercing_shot",
+        "damage": 999,
+        "range": 1200,
+        "projectile_size": 80
+      },
+      "color": "0xFFFF9800"
+    },
+    {
+      "id": "square",
+      "name": "Square",
+      "shape": "square",
+      "move_speed": 260,
+      "health": 120,
+      "ability": {
+        "name": "Shield Bash",
+        "description": "Stuns all enemies and projectiles within range for 1.5 seconds. Range upgrades increase the affected area.",
+        "cooldown": 7.0,
+        "type": "area_stun",
+        "damage": 25,
+        "range": 150,
+        "stun_duration": 1.5
+      },
+      "color": "0xFF2196F3"
+    },
+    {
+      "id": "pentagon",
+      "name": "Pentagon",
+      "shape": "pentagon",
+      "move_speed": 280,
+      "health": 110,
+      "ability": {
+        "name": "Star Flare",
+        "description": "Emit a radial burst (5) of star-shaped projectiles that damage all nearby foes.",
+        "cooldown": 8.0,
+        "type": "radial_burst",
+        "damage": 30,
+        "range": 300,
+        "projectile_count": 5
+      },
+      "color": "0xFF9C27B0"
+    },
+    {
+      "id": "hexagon",
+      "name": "Hexagon",
+      "shape": "hexagon",
+      "move_speed": 250,
+      "health": 130,
+      "ability": {
+        "name": "Hex Field",
+        "description": "Deploy a static hexagonal barrier (radius 200 units) that lasts 4 s, slowing enemies inside by 30% and dealing 10 HP/s (ticks every 1 s).",
+        "cooldown": 9.0,
+        "type": "area_field",
+        "damage": 10,
+        "range": 200,
+        "duration": 4.0,
+        "slow_percent": 0.3
+      },
+      "color": "0xFFE91E63"
+    },
+    {
+      "id": "heptagon",
+      "name": "Heptagon",
+      "shape": "heptagon",
+      "move_speed": 270,
+      "health": 100,
+      "ability": {
+        "name": "Resonance Knockback",
+        "description": "Unleash a wide resonant shockwave that deals 25 damage, knocks enemies back 30 units, and pushes away enemy projectiles. Range upgrades boost both detection range and knockback power.",
+        "cooldown": 10.0,
+        "type": "resonance_knockback",
+        "damage": 25,
+        "range": 100,
+        "knockback_distance": 30
+      },
+      "color": "0xFF00BCD4"
+    }
+  ]
+} 

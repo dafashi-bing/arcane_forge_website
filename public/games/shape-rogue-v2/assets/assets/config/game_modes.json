@@ -1,0 +1,38 @@
+{
+  "normal": {
+    "id": "normal",
+    "name": "Normal Mode",
+    "description": "Classic 5-wave survival experience with standard difficulty",
+    "max_waves": 5,
+    "scaling": 1.0,
+    "scaling_interval": 1,
+    "retry_tokens": false,
+    "player_health": 100,
+    "primary_color": "0xFF4CAF50",
+    "secondary_color": "0xFF45A049"
+  },
+  "endless": {
+    "id": "endless",
+    "name": "Endless Mode",
+    "description": "Survive infinite waves with exponential scaling every 5 waves",
+    "max_waves": -1,
+    "scaling": 1.20,
+    "scaling_interval": 5,
+    "retry_tokens": false,
+    "player_health": 100,
+    "primary_color": "0xFF9C27B0",
+    "secondary_color": "0xFF7B1FA2"
+  },
+  "oneHpChallenge": {
+    "id": "oneHpChallenge",
+    "name": "1HP Challenge",
+    "description": "One hit kills, but enemies have a 5% chance to drop Retry Tokens",
+    "max_waves": 5,
+    "scaling": 1.0,
+    "scaling_interval": 1,
+    "retry_tokens": true,
+    "player_health": 1,
+    "primary_color": "0xFFFF5722",
+    "secondary_color": "0xFFE64A19"
+  }
+} 

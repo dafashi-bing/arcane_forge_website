@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 
 import "styles/globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white dark:bg-black min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

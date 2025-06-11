@@ -1,0 +1,52 @@
+{
+  "display_config": {
+    "window_width": 1200,
+    "window_height": 900,
+    "arena_width": 1200,
+    "arena_height": 900,
+    "safe_area_margin": 50,
+    "maintain_aspect_ratio": true,
+    "base_scale_width": 800,
+    "base_scale_height": 600
+  },
+  "presets": {
+    "small": {
+      "window_width": 640,
+      "window_height": 480,
+      "arena_width": 640,
+      "arena_height": 480,
+      "description": "Small window for compact displays"
+    },
+    "default": {
+      "window_width": 800,
+      "window_height": 600,
+      "arena_width": 800,
+      "arena_height": 600,
+      "description": "Default game window size"
+    },
+    "large": {
+      "window_width": 1200,
+      "window_height": 900,
+      "arena_width": 1200,
+      "arena_height": 900,
+      "description": "Large window for bigger displays"
+    },
+    "ultrawide": {
+      "window_width": 1280,
+      "window_height": 720,
+      "arena_width": 1280,
+      "arena_height": 720,
+      "description": "Ultrawide format"
+    }
+  },
+  "notes": {
+    "window_width": "Width of the Flutter app window in pixels",
+    "window_height": "Height of the Flutter app window in pixels",
+    "arena_width": "Width of the game battlefield/arena in pixels",
+    "arena_height": "Height of the game battlefield/arena in pixels",
+    "safe_area_margin": "Margin around arena edges in pixels",
+    "maintain_aspect_ratio": "Whether to maintain aspect ratio when resizing",
+    "base_scale_width": "Base width for scaling calculations (reference resolution)",
+    "base_scale_height": "Base height for scaling calculations (reference resolution)"
+  }
+} 

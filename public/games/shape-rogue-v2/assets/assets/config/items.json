@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "health_potion",
+      "name": "Health Potion",
+      "cost": 30,
+      "description": "Restore 50 HP",
+      "type": "consumable",
+      "icon": "health_potion_transparent.png",
+      "effect": {
+        "type": "heal",
+        "value": 50
+      }
+    },
+    {
+      "id": "dash_mastery",
+      "name": "Dash Mastery",
+      "cost": 60,
+      "description": "-20% Dash Cooldown",
+      "type": "upgrade",
+      "icon": "ability_mastery_transparent.png",
+      "effect": {
+        "type": "dash_cooldown_multiplier",
+        "value": 0.8
+      }
+    },
+    {
+      "id": "max_health_up",
+      "name": "Max Health Up",
+      "cost": 50,
+      "description": "+25 Max Health",
+      "type": "upgrade",
+      "icon": "max_health_up_transparent.png",
+      "effect": {
+        "type": "max_health_increase",
+        "value": 25
+      }
+    },
+    {
+      "id": "attack_speed_up",
+      "name": "Attack Speed Up",
+      "cost": 60,
+      "description": "+25% Attack Speed",
+      "type": "upgrade",
+      "icon": "attack_speed_transparent.png",
+      "effect": {
+        "type": "attack_speed_multiplier",
+        "value": 0.25
+      }
+    },
+    {
+      "id": "speed_boost",
+      "name": "Speed Boost",
+      "cost": 40,
+      "description": "+25% Movement Speed",
+      "type": "upgrade",
+      "icon": "speed_boost_transparent.png",
+      "effect": {
+        "type": "speed_multiplier",
+        "value": 0.25
+      }
+    },
+    {
+      "id": "extended_reach",
+      "name": "Extended Reach",
+      "cost": 150,
+      "description": "+50% Range for all attacks and abilities",
+      "type": "upgrade",
+      "icon": "extended_reach_transparent.png",
+      "effect": {
+        "type": "range_multiplier",
+        "value": 0.5
+      }
+    }
+  ]
+} 
