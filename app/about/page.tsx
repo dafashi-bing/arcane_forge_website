@@ -46,7 +46,7 @@ export default function About() {
                   <span className="mr-2 text-red-500">✕</span> Random "slot machine" outputs
                 </li>
                 <li className="flex items-start text-gray-600 dark:text-gray-400">
-                  <span className="mr-2 text-red-500">✕</span> Disconnected workflows (Chat -> Photoshop -> IDE)
+                  <span className="mr-2 text-red-500">✕</span> Disconnected workflows (Chat -&gt; Photoshop -&gt; IDE)
                 </li>
                 <li className="flex items-start text-gray-600 dark:text-gray-400">
                   <span className="mr-2 text-red-500">✕</span> Requires ML PhDs to optimize
