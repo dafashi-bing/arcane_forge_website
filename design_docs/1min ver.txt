@@ -1,0 +1,96 @@
+00:00:00:18 - 00:00:02:07
+Making a real game is complicated and slow.
+
+00:00:02:07 - 00:00:05:07
+We thought AI is the solution.
+
+00:00:05:18 - 00:00:08:18
+Most products todaysell the dream of one prompt, one game,
+
+00:00:08:25 - 00:00:10:04
+but it's just random gambling.
+
+00:00:10:04 - 00:00:12:55
+99% of the timeit doesn't fit what you want.
+
+00:00:12:55 - 00:00:13:46
+Hard to tune.
+
+00:00:13:46 - 00:00:16:46
+Zero control, zero improvement.
+
+00:00:16:53 - 00:00:18:52
+So you try the big name AI tools,
+
+00:00:18:52 - 00:00:21:36
+but you are immediatelyset by the AI hallucination.
+
+00:00:21:36 - 00:00:22:40
+Broken code.
+
+00:00:22:40 - 00:00:23:43
+A lot of fingers.
+
+00:00:23:43 - 00:00:26:07
+Narratives that forgot their own plot.
+
+00:00:26:07 - 00:00:30:00
+Solving this mess demands a depth ofAI knowledge that takes the years to build.
+
+00:00:30:45 - 00:00:33:09
+Or you could hire one.
+
+00:00:33:09 - 00:00:34:46
+There must be a smarter solution.
+
+00:00:34:46 - 00:00:37:21
+Not random prompts. Not endless learnings.
+
+00:00:37:21 - 00:00:41:07
+AI solutions built for game developers.
+
+00:00:41:27 - 00:00:44:27
+With Arcane Forge, AI finally worked with you. From design,
+
+00:00:45:10 - 00:00:47:13
+to code
+
+00:00:47:13 - 00:00:49:08
+to art
+
+00:00:49:08 - 00:00:49:48
+to sound
+
+00:00:51:09 - 00:00:53:09
+to music.
+
+00:00:53:09 - 00:00:55:12
+To analysis
+
+00:00:55:12 - 00:00:58:55
+To iteration, all unified in one place.
+
+00:00:59:58 - 00:01:02:15
+You don't need to learn all AI magics.
+
+00:01:02:15 - 00:01:03:59
+Arcane forge guides you,
+
+00:01:03:59 - 00:01:07:04
+so you focus on game development,not the AI configuration.
+
+00:01:07:39 - 00:01:10:24
+Your game improves with Arcane Forge by your side
+
+00:01:10:24 - 00:01:13:12
+from just a gray box V1
+
+00:01:13:12 - 00:01:15:43
+to V2 with more mechanisms
+
+00:01:15:43 - 00:01:18:43
+to V3 with finer arts and animations.
+
+00:01:19:46 - 00:01:23:08
+Build real games powered by AI.Arcane Forge
+

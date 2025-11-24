@@ -1,28 +1,89 @@
-import { AiOutlineFacebook, AiOutlineX, AiOutlineGithub, AiOutlineLinkedin, AiOutlineInstagram } from "react-icons/ai";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-gray-100 dark:bg-black shadow-sm text-gray-400 py-6 dark:border-t dark:border-gray-800">
-      <div className="container mx-auto px-4 flex flex-wrap justify-center sm:justify-between items-center text-sm">
-        <p className="ml-4">&copy; {currentYear} BingAI Studio LLC. All rights reserved.</p>
-        <div className="flex space-x-4 mt-2 mr-4 sm:mt-0">
-          {/* <a href="#" aria-label="Facebook" className="hover:text-gray-300">
-            <AiOutlineFacebook className="w-5 h-5" />
-          </a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-gray-300">
-            <AiOutlineLinkedin className="w-5 h-5" />
-          </a>
-          <a href="#" aria-label="Instagram" className="hover:text-gray-300">
-            <AiOutlineInstagram className="w-5 h-5" />
-          </a>
-          <a href="#" aria-label="X (formerly Twitter)" className="hover:text-gray-300">
-            <AiOutlineX className="w-5 h-5" />
-          </a>
-          <a href="#" aria-label="GitHub" className="hover:text-gray-300">
-            <AiOutlineGithub className="w-5 h-5" />
-          </a> */}
+    <footer className="bg-white dark:bg-black border-t border-gray-100 dark:border-gray-800 pt-12 pb-8">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div className="col-span-2 md:col-span-1">
+             <Link href="/" className="flex items-center gap-2 mb-4">
+               <img src="/logo.png" alt="Arcane Forge Logo" className="w-8 h-8 rounded-lg object-contain" />
+               <span className="text-xl font-bold dark:text-gray-100">Arcane Forge</span>
+             </Link>
+          </div>
+          
+          {/* Column 1: Product */}
+          <div>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Product</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/games" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Games
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Roadmap
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 2: Company */}
+          <div>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Resources */}
+          <div>
+            <h3 className="font-bold text-gray-900 dark:text-white mb-4">Resources</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="https://docs.arcaneforge.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Docs
+                </a>
+              </li>
+              <li>
+                <a href="https://discord.gg/J4Nb8qRR7q" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Community
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Legal Row */}
+        <div className="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-sm text-gray-400 mb-4 md:mb-0">
+            &copy; {currentYear} Arcane Forge. All rights reserved.
+          </div>
+          <div className="flex space-x-6">
+            <Link href="/privacy" className="text-sm text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-sm text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+              Terms of Use
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

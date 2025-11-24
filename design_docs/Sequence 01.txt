@@ -1,0 +1,402 @@
+00:00:00:37 - 00:00:03:01
+Hey everyone, this is being from ArkaneForge AI.
+
+00:00:03:01 - 00:00:06:05
+Today I'm excited to walk youthrough our MVP demo,
+
+00:00:06:19 - 00:00:10:28
+a platform that helps game studiosand indie developers design, build,
+
+00:00:10:28 - 00:00:13:28
+and iterate gamesfaster with the help of our AI.
+
+00:00:14:56 - 00:00:16:12
+Let's start from the beginning.
+
+00:00:16:12 - 00:00:17:47
+The game designer system.
+
+00:00:17:47 - 00:00:19:48
+Here, you can simply start a new project.
+
+00:00:19:48 - 00:00:22:08
+Describewhat kind of game you want to make.
+
+00:00:22:08 - 00:00:24:55
+Say I top down the roguelike shooter,and already
+
+00:00:24:55 - 00:00:27:55
+I will walk you through the entire designprocess.
+
+00:00:28:28 - 00:00:31:51
+It follows through on game designpatterns, asks the right questions,
+
+00:00:32:04 - 00:00:35:20
+and helps you organize your ideasinto a structured game
+
+00:00:35:20 - 00:00:38:20
+design document.
+
+00:00:40:06 - 00:00:41:42
+Once you are happy with your design,
+
+00:00:41:42 - 00:00:45:19
+you can save it to your project knowledgebase for future iteration, team
+
+00:00:45:19 - 00:00:48:25
+collaborationor directly into code generation.
+
+00:00:49:58 - 00:00:52:58
+Now that we have a design, it'stime to move into development.
+
+00:00:53:09 - 00:00:56:09
+Here we use the Flame Slayer game engine.
+
+00:00:57:30 - 00:00:59:43
+To get good code generation quality.
+
+00:00:59:43 - 00:01:02:51
+We install flameMCP, our model context protocol.
+
+00:01:03:23 - 00:01:06:01
+It helps anyAI coding assistant understand
+
+00:01:06:01 - 00:01:09:03
+the flame frameworkand bring optimal solution to your game.
+
+00:01:10:04 - 00:01:12:09
+You can take your design doginto your favorite
+
+00:01:12:09 - 00:01:15:09
+AI IDs and have them generate game code.
+
+00:01:15:18 - 00:01:19:38
+We've tested this with multipleAI coding agents, and we're same MCP.
+
+00:01:19:39 - 00:01:22:39
+The code generationbecomes a lot more reliable.
+
+00:01:23:00 - 00:01:25:30
+We'll continue expandingwith additional MSPs
+
+00:01:25:30 - 00:01:27:45
+for other frameworks in the future.
+
+00:01:27:45 - 00:01:32:04
+This way, your AI IDs can performjust as efficiently across
+
+00:01:32:04 - 00:01:35:04
+whichever SDK you choose to work with.
+
+00:01:37:37 - 00:01:38:04
+All right,
+
+00:01:38:04 - 00:01:41:22
+let's talk about the creative sideas a generation, one of the most time
+
+00:01:41:22 - 00:01:45:09
+consuming parts of game developmentthat we wanted to simplify dramatically.
+
+00:01:46:19 - 00:01:49:40
+From your design document, Arkham Forgecan automatically detect
+
+00:01:49:40 - 00:01:52:42
+what types of assets you needand generate them for you.
+
+00:01:52:58 - 00:01:55:44
+No need to manually describeevery single element.
+
+00:01:55:44 - 00:01:58:44
+The AI already understandthe context of the design
+
+00:02:00:25 - 00:02:03:19
+AI can forge, analyzesthe description, and generates
+
+00:02:03:19 - 00:02:07:10
+a full list of prompts for each assetbehind the scene, and matches
+
+00:02:07:10 - 00:02:09:34
+the right imagegeneration model for each task.
+
+00:02:09:34 - 00:02:13:11
+Whether you are going for pixel art,hand-drawn or 3D rendered styles,
+
+00:02:14:52 - 00:02:17:38
+we know that many game developersaren't AI researchers,
+
+00:02:17:38 - 00:02:20:43
+and tuning promptsand parameters can be very intimidating.
+
+00:02:21:03 - 00:02:24:19
+That's why we built a AI model recommenderand the prompt helper.
+
+00:02:24:48 - 00:02:26:13
+The AI doesn't just tell you
+
+00:02:26:13 - 00:02:30:34
+what models to use, it explainswhy it's a good fit and helps you iterate.
+
+00:02:30:34 - 00:02:31:57
+Visualize your conversation.
+
+00:02:33:01 - 00:02:35:11
+Sometimes the first generationisn't perfect.
+
+00:02:35:11 - 00:02:40:03
+Maybe colors clashed with your UIor styles are inconsistent across assets.
+
+00:02:40:37 - 00:02:41:58
+You can provide your comments
+
+00:02:41:58 - 00:02:45:49
+on what you like and don't like onprevious generations, and asking for its
+
+00:02:45:50 - 00:02:49:39
+AI can automatically reviewyour asset patch and suggest improvements.
+
+00:02:58:39 - 00:03:00:48
+Once the assets are generated,you can preview
+
+00:03:00:48 - 00:03:04:44
+multiple versions, compare themside by side, and mark your favorites.
+
+00:03:05:09 - 00:03:08:27
+Those selected imagesare automatically typed for export
+
+00:03:08:47 - 00:03:11:47
+and readyto drop directly into your project folder.
+
+00:03:13:26 - 00:03:15:30
+Audio is another key element of the game.
+
+00:03:15:30 - 00:03:18:03
+From sound effectsto ambient background music,
+
+00:03:18:03 - 00:03:20:54
+you can generate everythingdirectly from your design document.
+
+00:03:20:54 - 00:03:25:06
+The AI read descriptionslike fireball, attack or Victory scene
+
+00:03:25:06 - 00:03:26:24
+and suggest appropriate sounds.
+
+00:03:26:24 - 00:03:31:43
+Generation props. For.
+
+00:03:37:24 - 00:03:40:24
+Your show.
+
+00:03:43:37 - 00:03:46:39
+And of course, just like visuals,you can favorite your best takes.
+
+00:03:46:44 - 00:03:49:15
+Download them and import themstraight into your project.
+
+00:04:03:45 - 00:04:06:21
+With all these features combined, assetgeneration
+
+00:04:06:21 - 00:04:09:59
+becomes a iterative creative process,not a technical.
+
+00:04:10:21 - 00:04:13:55
+You stay focused on designand storytelling while our team force
+
+00:04:13:55 - 00:04:16:55
+and also the AI production details.
+
+00:04:17:56 - 00:04:18:53
+With design code
+
+00:04:18:53 - 00:04:21:53
+and assets in place,we now have our first playable build.
+
+00:04:21:57 - 00:04:25:17
+In version one, we kept thingssimple five heroes in different shapes,
+
+00:04:25:38 - 00:04:29:07
+a basic shop system, two types of enemies,and around ten items.
+
+00:04:29:36 - 00:04:32:25
+The goal is to survivethrough five waves of enemies.
+
+00:04:32:25 - 00:04:36:10
+It's not perfect, but it's a startand it shows people what game
+
+00:04:36:10 - 00:04:39:10
+we're building.
+
+00:04:54:13 - 00:04:57:13
+So so.
+
+00:05:00:19 - 00:05:02:04
+No game is great on the first try,
+
+00:05:02:04 - 00:05:05:07
+and that's whyiteration is a huge part of Arkham Forge.
+
+00:05:06:21 - 00:05:09:03
+Our feedback system letsyou connect to in-game data
+
+00:05:09:03 - 00:05:12:03
+or player feedbackdirectly to your design environment.
+
+00:05:12:09 - 00:05:15:37
+You can ask AI questionslike is the difficulty curve too steep?
+
+00:05:15:59 - 00:05:19:39
+Or which levels have the highest drop offrate, and get analysis
+
+00:05:19:39 - 00:05:21:30
+and suggestions back instantly.
+
+00:05:22:55 - 00:05:25:33
+The systemcan process both qualitative comments
+
+00:05:25:33 - 00:05:30:05
+and quantitative metrics like wing rates,session time or stage completion ratio,
+
+00:05:30:23 - 00:05:33:23
+and transform them into actionableinsights.
+
+00:05:33:55 - 00:05:37:12
+The AI not only answers your questions,but provides context.
+
+00:05:37:33 - 00:05:40:15
+It can explain why certain patternsmight emerge,
+
+00:05:40:15 - 00:05:44:51
+highlight anomalies in player behavior,and even visualize difficulty spikes
+
+00:05:44:51 - 00:05:47:51
+or engagementdrops right inside your own forex space.
+
+00:05:47:51 - 00:05:51:00
+This makes it easy to see at a glancewhat's working
+
+00:05:51:00 - 00:05:53:07
+and what needs to be tuning.
+
+00:05:53:07 - 00:05:56:13
+The AI then writes a Delta gamedesign document summarizing
+
+00:05:56:13 - 00:05:58:06
+what should be improved next.
+
+00:05:58:06 - 00:06:01:44
+It captures these iterationsso that you can trace the evolution
+
+00:06:01:44 - 00:06:04:44
+of your game's design decisions.
+
+00:06:05:06 - 00:06:07:30
+Beyond that,we have AI driven improvement design.
+
+00:06:07:30 - 00:06:11:38
+Our AI group's relatedfeedback identifies patterns and proposed
+
+00:06:11:38 - 00:06:14:43
+potential mutations,which are creative variations
+
+00:06:14:43 - 00:06:17:43
+or next steps ideasfor the next iteration.
+
+00:06:17:54 - 00:06:21:43
+For instance, if players keep mentioningthat the difficulty curve is too steep,
+
+00:06:22:03 - 00:06:23:31
+the system will suggest tuning
+
+00:06:23:31 - 00:06:27:01
+and we can fix or introducenew mechanisms to make game easier.
+
+00:06:27:52 - 00:06:31:19
+You can review, edit, or addyour own ideas before generating
+
+00:06:31:19 - 00:06:34:48
+the next iteration documentand saving it to your knowledge base.
+
+00:06:35:36 - 00:06:38:40
+Each iterationbuilds upon the previous one, turning your
+
+00:06:38:40 - 00:06:42:41
+feedback loop into a true co-creationprocess between you and the AI.
+
+00:06:54:07 - 00:06:56:49
+Here's where the magic happensin version two.
+
+00:06:56:49 - 00:07:00:57
+After processing the feedback,we added more heroes, two more game modes,
+
+00:07:01:10 - 00:07:05:06
+and the list modeand OHV mode improved the UI and balanced
+
+00:07:05:06 - 00:07:08:54
+the game waste by introducing power updrops and new enemy types that change
+
+00:07:08:54 - 00:07:10:30
+how each rank feels.
+
+00:07:10:30 - 00:07:14:22
+We also refined progression, pacing,and adjusted the in-game economy
+
+00:07:14:40 - 00:07:17:25
+so that the game is less brokenand more playable.
+
+00:07:17:25 - 00:07:21:00
+These changes made versiontwo feel much more polished and enjoyable
+
+00:07:21:00 - 00:07:24:00
+to play.
+
+00:07:32:40 - 00:07:35:04
+Then in version three,we pushed even further
+
+00:07:35:04 - 00:07:38:22
+a cleaner interface, new abilities, around20 new items,
+
+00:07:38:36 - 00:07:41:36
+and a wide range of enemieswith unique attack patterns.
+
+00:07:42:03 - 00:07:45:52
+We introduced new upgradesfor the heroes, expanded the list mode
+
+00:07:46:17 - 00:07:50:33
+and improved animations and hit feedbacksfor more satisfying combat experience.
+
+00:07:51:09 - 00:07:54:09
+You will even see new mechanismslike the wingman system,
+
+00:07:54:21 - 00:07:57:21
+where sidekicks can assistyou during battles, creating
+
+00:07:57:21 - 00:08:01:10
+more dynamic, strategicand unpredictable gameplay moments.
+
+00:08:02:51 - 00:08:03:30
+And that's how our
+
+00:08:03:30 - 00:08:07:53
+MVP in action from concept to code, fromart to iteration, Arkham
+
+00:08:07:53 - 00:08:11:20
+Forge connects every part of game creationwith AI systems.
+
+00:08:11:56 - 00:08:15:07
+We are building toolsthat large gameplay studios focus less on,
+
+00:08:15:07 - 00:08:18:41
+loading complicated AI setupsand more on creative directions.
+
+00:08:19:31 - 00:08:20:47
+Thank you for watching!
+
+00:08:20:47 - 00:08:24:16
+If you are a game studio or developerinterested in trying Arkham Forge
+
+00:08:24:25 - 00:08:27:25
+or partnering with us,feel free to reach out.
+
+00:08:27:46 - 00:08:29:00
+Let's build the game in your mind.
+

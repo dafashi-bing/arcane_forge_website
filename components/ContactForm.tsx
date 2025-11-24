@@ -53,20 +53,20 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
   return (
     <div className={className}>
       {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 dark:bg-green-900 text-green-800 dark:text-green-100 rounded-md">
+        <div className="mb-6 p-4 bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 rounded-xl backdrop-blur-sm">
           Thank you for your message. We'll get back to you soon!
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900 text-red-800 dark:text-red-100 rounded-md">
+        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 rounded-xl backdrop-blur-sm">
           There was an error sending your message. Please try again later.
         </div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ml-1">
             Name
           </label>
           <input
@@ -75,14 +75,15 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
+            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+            placeholder="Your name"
             required
             disabled={isSubmitting}
           />
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ml-1">
             Email
           </label>
           <input
@@ -91,15 +92,16 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
+            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none"
+            placeholder="you@studio.com"
             required
             disabled={isSubmitting}
           />
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Message
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 ml-1">
+            How can we help?
           </label>
           <textarea
             id="message"
@@ -107,7 +109,8 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent"
+            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-xl text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 outline-none resize-none"
+            placeholder="Tell us about your game project..."
             required
             disabled={isSubmitting}
           />
@@ -116,10 +119,10 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-md text-base font-semibold transition duration-300 ${
+          className={`w-full py-4 px-8 rounded-xl text-white font-bold text-lg transition-all duration-300 shadow-lg ${
             isSubmitting 
-              ? 'opacity-50 cursor-not-allowed' 
-              : 'hover:bg-gray-800 dark:hover:bg-gray-200'
+              ? 'bg-gray-400 cursor-not-allowed' 
+              : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-blue-500/25 hover:scale-[1.02]'
           }`}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -127,4 +130,4 @@ export default function ContactForm({ formspreeId, className = "" }: ContactForm
       </form>
     </div>
   );
-} 
+}
