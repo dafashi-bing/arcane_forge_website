@@ -6,6 +6,18 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { FaArrowLeft } from 'react-icons/fa';
 
+function formatDate(dateString: string): string {
+  // Parse date string as local date to avoid timezone issues
+  const [year, month, day] = dateString.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
 export function generateStaticParams() {
   const posts = getSortedPostsData();
   return posts.map((post) => ({
@@ -51,11 +63,7 @@ export default function Post({ params }: { params: { slug: string } }) {
             
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
               <time dateTime={post.date}>
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
+                {formatDate(post.date)}
               </time>
               <span>•</span>
               <span>By Arcane Forge Team</span>

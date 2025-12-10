@@ -3,6 +3,18 @@ import { getSortedPostsData } from '@/lib/blog';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+function formatDate(dateString: string): string {
+  // Parse date string as local date to avoid timezone issues
+  const [year, month, day] = dateString.split('-').map(Number);
+  const date = new Date(year, month - 1, day);
+  
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
 export default function Blog() {
   const posts = getSortedPostsData();
 
@@ -43,11 +55,7 @@ export default function Blog() {
                     <article className="flex flex-col md:flex-row gap-6 md:items-baseline">
                       <div className="md:w-1/4 flex-shrink-0">
                         <time className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                          {new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
+                          {formatDate(post.date)}
                         </time>
                       </div>
                       
