@@ -1,0 +1,36 @@
+---
+title: "Early Partner Update: Online Image Generation & Web Beta"
+date: "2025-12-26"
+excerpt: "We've shifted to online image generation by default to improve accessibility, launched the Arcane Forge web beta, and are beginning to bridge the gap between game design and technical implementation."
+---
+
+This week isn’t a big feature launch week — it’s a reality-check week.
+
+In the first two weeks after early access, we heard from a number of early adopters that they couldn’t install our image generation services locally, or it ran extremely slowly on their machines. I’ll be honest: I assumed most game builders would have decent GPUs and that we could mostly reuse the customer’s hardware. But we quickly learned that real-world setups vary a lot — including GPUs and “work-style” laptops we don’t personally have in-house — and local-first was not a reliable default.
+
+So over the past two weeks, we switched to online image generation by default.
+
+You now don't need to install anything. You open Arcane Forge, submit an image generation job, and our online service queues and runs it. Results usually come back in about one to five minutes depending on pod availability.
+
+![Online Image Generation Queue](/blog-images/online_image_generation_queue.jpeg)
+
+
+For the online image service, we’ve also included a few models and LoRAs requested by early users. Next, we’ll add more models and LoRAs, and provide more flexibility so you won’t need to ask us to load models repeatedly. We’re also planning to include not only community/open models, but also commercial options like OpenAI Image Generation and newer viral ones like NanoBanana.
+
+![Model List](/blog-images/model_list.jpg)
+
+We also recognize there’s a learning curve for anyone new to AI image generation: picking a model and picking a LoRA can be confusing. So we’re going to make it easier to find what fits you — not only with help from our AI assistant, plus more intuitive ways to browse and choose models.
+
+![Current AI Helper](/blog-images/ai_image_recommendation.jpeg)
+
+One more thing: since image generation is online now, we also launched a web version.
+
+Arcane Forge is built in Flutter, so cross-platform is achievable. You can now access a beta web version at [https://app.arcaneforge.ai](https://app.arcaneforge.ai). The suite was originally built targeting Windows, so we’ve patched obvious compatibility issues, but we can’t guarantee there are no bugs yet — we’ll keep fixing them. Long-term, we want to stay in sync across Windows, Mac, Web, and Linux.
+
+Finally, the next major milestone is code generation.
+
+We’re hearing that Arcane Forge is great for game ideas and game pitch drafts, but when users want a technical implementation plan, many jump to Cursor — and then they stay there for the rest of the workflow. We want to close that gap so Arcane Forge can bridge game design to implementation more directly, without needing a separate tool.
+
+That’s it for this week. Merry Christmas, and Happy New Year.
+
+— Bing
