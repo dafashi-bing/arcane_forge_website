@@ -19,14 +19,19 @@ const Footer = () => {
             <h3 className="font-bold text-gray-900 dark:text-white mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/games" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                  Games
+                <Link href="https://app.arcaneforge.ai/" target="_blank" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Web Version (Beta)
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
-                  Roadmap
-                </a>
+                <Link href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases" target="_blank" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Desktop App
+                </Link>
+              </li>
+              <li>
+                <Link href="/games" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Showcase Games
+                </Link>
               </li>
             </ul>
           </div>

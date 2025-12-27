@@ -38,20 +38,21 @@ export default function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
             <Link
-              href="/contact"
+              href="https://app.arcaneforge.ai/"
+              target="_blank"
               className="group relative inline-flex justify-center items-center px-8 py-4 text-base font-bold text-white bg-black dark:bg-white dark:text-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 dark:hover:shadow-white/25"
             >
-              <span className="relative z-10">Request Early Access</span>
+              <span className="relative z-10">Try Web Version (Beta)</span>
               <div className="absolute inset-0 -z-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
             
-            <button
-              onClick={openModal}
+            <Link
+              href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases"
+              target="_blank"
               className="inline-flex justify-center items-center px-8 py-4 rounded-full text-base font-bold border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300 text-gray-900 dark:text-white"
             >
-              <AiOutlinePlayCircle className="w-5 h-5 mr-2" />
-              Watch Demo
-            </button>
+              Download Desktop
+            </Link>
           </div>
         </div>
 

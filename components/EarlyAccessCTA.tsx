@@ -22,16 +22,18 @@ const EarlyAccessCTA = () => {
         
         <div className="flex flex-col sm:flex-row justify-center gap-5 mb-12">
           <Link
-            href="/contact"
+            href="https://app.arcaneforge.ai/"
+            target="_blank"
             className="group relative inline-flex justify-center items-center px-8 py-4 text-lg font-bold text-black bg-white rounded-full overflow-hidden transition-transform duration-300 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
           >
-            Request Early Access
+            Try Web Version
           </Link>
           <Link
-            href="/contact"
+            href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases"
+            target="_blank"
             className="inline-flex justify-center items-center px-8 py-4 text-lg font-bold text-white border border-white/30 bg-white/5 backdrop-blur-sm rounded-full hover:bg-white/10 transition-all duration-300"
           >
-            Contact Us
+            Download Desktop
           </Link>
         </div>
 

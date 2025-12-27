@@ -62,10 +62,11 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/contact"
+            href="https://app.arcaneforge.ai/"
+            target="_blank"
             className="bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors shadow-lg shadow-blue-500/10"
           >
-            Early Access
+            Launch Web Beta
           </Link>
           
           <ThemeSwitch />
