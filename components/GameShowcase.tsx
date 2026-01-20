@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { siteConfig } from "@/config/site";
 
 type Game = {
   id: string;
@@ -19,7 +20,7 @@ export default function GameShowcase() {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const response = await fetch('https://games.arcaneforge.ai/api/games');
+        const response = await fetch(`${siteConfig.gamesApiHost}/api/games`);
         const data = await response.json();
         
         // Strictly use API data, no inferred tags or icons
@@ -195,7 +196,7 @@ export default function GameShowcase() {
         
         <div className="mt-16 text-center">
           <a 
-            href="https://games.arcaneforge.ai/games"
+            href={`${siteConfig.gamesApiHost}/games`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl"

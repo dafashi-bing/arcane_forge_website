@@ -3,9 +3,14 @@
 import Link from "next/link";
 import ThemeSwitch from "./ThemeSwitch";
 import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [user, setUser] = useState<any>(null);
+  const supabase = createClient();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +19,25 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+    };
+    getUser();
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [supabase]);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    router.refresh();
+  };
 
   return (
     <header 
@@ -36,7 +60,7 @@ export default function Header() {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          {['Games', 'Docs', 'Blog', 'About'].map((item) => (
+          {['Games', 'Pricing', 'Docs', 'Blog', 'About'].map((item) => (
             <Link 
               key={item}
               href={
@@ -60,6 +84,27 @@ export default function Header() {
           >
             Contact
           </Link>
+
+          {user ? (
+            <div className="flex items-center space-x-4">
+               <span className="text-sm text-gray-600 dark:text-gray-300 hidden lg:block">
+                {user.email}
+              </span>
+              <button
+                onClick={handleSignOut}
+                className="text-sm font-medium text-red-500 hover:text-red-600 transition-colors"
+              >
+                Sign Out
+              </button>
+            </div>
+          ) : (
+            <Link
+              href="/login"
+              className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+            >
+              Sign In
+            </Link>
+          )}
 
           <Link
             href="https://app.arcaneforge.ai/"
