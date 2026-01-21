@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Pricing from "@/components/Pricing";
@@ -17,7 +18,13 @@ export default function PricingPage() {
             </p>
           </div>
           
-          <Pricing />
+          <Suspense fallback={
+            <div className="flex justify-center py-20">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+            </div>
+          }>
+            <Pricing />
+          </Suspense>
         </div>
       </main>
       <Footer />
