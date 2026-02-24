@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,6 +16,38 @@ export default function LoginPage() {
   
   const supabase = createClient();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const nextParam = searchParams.get("next") ?? "/";
+  const safeNextPath = nextParam.startsWith("/") ? nextParam : "/";
+  const extCallback = searchParams.get("ext_callback");
+  const state = searchParams.get("state");
+
+  const buildUrlWithHandoff = (
+    targetPath: string,
+    options?: { includeNext?: boolean; absolute?: boolean }
+  ) => {
+    const { includeNext = false, absolute = false } = options ?? {};
+    const safeTargetPath = targetPath.startsWith("/") ? targetPath : "/";
+    const url = new URL(safeTargetPath, window.location.origin);
+
+    if (includeNext) {
+      url.searchParams.set("next", safeNextPath);
+    }
+
+    if (extCallback) {
+      url.searchParams.set("ext_callback", extCallback);
+    }
+
+    if (state) {
+      url.searchParams.set("state", state);
+    }
+
+    if (absolute) {
+      return url.toString();
+    }
+
+    return `${url.pathname}${url.search}${url.hash}`;
+  };
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +59,10 @@ export default function LoginPage() {
           email, 
           password,
           options: {
-            emailRedirectTo: `${window.location.origin}/auth/callback`,
+            emailRedirectTo: buildUrlWithHandoff("/auth/callback", {
+              includeNext: true,
+              absolute: true,
+            }),
           }
         })
       : await supabase.auth.signInWithPassword({ email, password });
@@ -40,7 +75,7 @@ export default function LoginPage() {
         setError("Check your email for the confirmation link!");
         setLoading(false);
       } else {
-        router.push("/");
+        router.push(buildUrlWithHandoff(safeNextPath));
         router.refresh();
       }
     }
@@ -133,4 +168,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
