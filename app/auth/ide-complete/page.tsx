@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
-export default function IdeCompletePage() {
+function IdeCompletePageContent() {
   const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
 
@@ -87,5 +87,26 @@ export default function IdeCompletePage() {
         </p>
       </div>
     </main>
+  );
+}
+
+export default function IdeCompletePage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-white dark:bg-black px-4 flex items-center justify-center">
+          <div className="w-full max-w-md rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-6 shadow-xl">
+            <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
+              Completing IDE sign-in...
+            </h1>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+              You can close this tab after the IDE opens.
+            </p>
+          </div>
+        </main>
+      }
+    >
+      <IdeCompletePageContent />
+    </Suspense>
   );
 }

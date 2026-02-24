@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-export default function LoginPage() {
+function LoginPageContent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -166,5 +166,25 @@ export default function LoginPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-col min-h-screen bg-white dark:bg-black">
+          <Header />
+          <main className="flex-grow flex items-center justify-center pt-24 pb-12 px-4">
+            <div className="max-w-md w-full bg-gray-50 dark:bg-gray-900 rounded-3xl p-8 shadow-2xl border border-gray-100 dark:border-gray-800">
+              <p className="text-sm text-gray-600 dark:text-gray-300">Loading sign-in...</p>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      }
+    >
+      <LoginPageContent />
+    </Suspense>
   );
 }
