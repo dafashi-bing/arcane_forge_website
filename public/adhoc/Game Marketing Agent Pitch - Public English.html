@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Marketing Agent — Project Pitch</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --text: #f7fbff;
+      --muted: #b8c7dc;
+      --line: rgba(255,255,255,0.16);
+      --card: rgba(255,255,255,0.075);
+      --accent: #79f2c0;
+      --accent2: #67d4ff;
+      --warm: #ffd166;
+      --danger: #ff8a8a;
+      --ink: #172033;
+      --paper-muted: #536175;
+      --shadow: 0 24px 80px rgba(0,0,0,0.38);
+      --radius: 26px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Inter, Arial, sans-serif; }
+    body { overflow: hidden; }
+    .deck {
+      width: 100vw; height: 100vh; position: relative;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(103,212,255,0.20), transparent 32%),
+        radial-gradient(circle at 82% 18%, rgba(121,242,192,0.16), transparent 30%),
+        radial-gradient(circle at 55% 92%, rgba(255,209,102,0.12), transparent 26%),
+        linear-gradient(135deg, #07101f 0%, #0b1628 48%, #10101c 100%);
+    }
+    .slide { display: none; position: absolute; inset: 0; padding: 5vh 6vw 6vh; overflow: hidden; }
+    .slide::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.72; background: radial-gradient(circle at 85% 18%, rgba(121,242,192,0.08), transparent 28%), radial-gradient(circle at 16% 82%, rgba(103,212,255,0.07), transparent 30%); }
+    .slide > * { position: relative; z-index: 1; }
+    .slide.active { display: flex; flex-direction: column; }
+    .slide.light { background: transparent; color: var(--text); }
+    .slide.light .eyebrow { color: var(--accent); }
+    .slide.light .subtitle, .slide.light .muted, .slide.light .caption { color: var(--muted); }
+    .slide.light .card { background: rgba(255,255,255,0.075); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .slide.light .pill { background: rgba(255,255,255,0.09); color: var(--text); border: 1px solid var(--line); }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; min-height: 36px; }
+    .brand { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .progress { font-size: 13px; color: var(--muted); }
+    h1 { font-size: clamp(46px, 7vw, 94px); line-height: 0.95; margin: 6vh 0 3vh; letter-spacing: -0.065em; max-width: 1080px; }
+    h2 { font-size: clamp(34px, 5vw, 64px); line-height: 1.02; margin: 3vh 0 2vh; letter-spacing: -0.045em; max-width: 1120px; }
+    h3 { font-size: 21px; line-height: 1.25; margin: 0 0 12px; }
+    p { font-size: clamp(17px, 1.55vw, 24px); line-height: 1.45; margin: 0; }
+    ul { margin: 0; padding-left: 1.2em; }
+    li { font-size: clamp(16px, 1.28vw, 20px); line-height: 1.45; margin: 8px 0; }
+    .eyebrow { color: var(--accent); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 13px; }
+    .subtitle { color: var(--muted); max-width: 930px; }
+    .accent { color: var(--accent); }
+    .blue { color: var(--accent2); }
+    .warm { color: var(--warm); }
+    .danger { color: var(--danger); }
+    .muted { color: var(--muted); }
+    .caption { font-size: 13px; color: var(--muted); }
+    .grid { display: grid; gap: 22px; }
+    .grid.two { grid-template-columns: 1.05fr 0.95fr; align-items: center; }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); backdrop-filter: blur(10px); }
+    .card.compact { padding: 18px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.09); border: 1px solid var(--line); color: var(--text); font-size: 13px; font-weight: 750; }
+    .number { width: 34px; height: 34px; border-radius: 50%; display: inline-grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #07101f; font-weight: 900; margin-bottom: 12px; }
+    .hero-row { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; flex: 1; }
+    .orb { width: min(38vw, 520px); aspect-ratio: 1; border-radius: 50%; margin: auto; background: radial-gradient(circle at 35% 30%, #ffffff 0%, #bfffe9 10%, #67d4ff 32%, #3454d1 62%, #111c3a 100%); box-shadow: 0 0 80px rgba(103,212,255,0.32), inset -40px -60px 110px rgba(0,0,0,0.35); position: relative; }
+    .orb::before, .orb::after { content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.30); inset: 12%; transform: rotate(22deg) scaleX(1.22); }
+    .orb::after { inset: 24%; transform: rotate(-28deg) scaleX(1.35); opacity: 0.6; }
+    .flow { display: flex; align-items: stretch; gap: 14px; margin-top: 24px; }
+    .flow .step { flex: 1; min-height: 128px; display: flex; flex-direction: column; justify-content: space-between; }
+    .arrow { display: grid; place-items: center; color: var(--accent2); font-size: 28px; font-weight: 900; }
+    .stack { display: grid; gap: 16px; margin-top: 26px; }
+    .layer { display: grid; grid-template-columns: 250px 1fr; gap: 18px; align-items: center; padding: 20px 24px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255,255,255,0.075); box-shadow: var(--shadow); }
+    .layer strong { font-size: 20px; color: var(--text); }
+    .layer:nth-child(1) { border-left: 8px solid #67d4ff; }
+    .layer:nth-child(2) { border-left: 8px solid #79f2c0; }
+    .layer:nth-child(3) { border-left: 8px solid #ffd166; }
+    .xgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 28px; }
+    .xcard { min-height: 168px; padding: 18px; border-radius: 22px; background: rgba(255,255,255,0.075); border: 1px solid var(--line); }
+    .xmark { color: var(--danger); font-size: 28px; font-weight: 900; margin-bottom: 14px; }
+    .ask-box { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .ask-item { padding: 24px; border-radius: 24px; background: rgba(255,255,255,0.075); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .ask-item .big { font-size: 40px; font-weight: 900; color: var(--accent); }
+    .learning-map { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; margin-top: 26px; }
+    .signal-card { position: relative; min-height: 142px; padding: 20px; border-radius: 24px; background: rgba(255,255,255,0.075); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .signal-card .tag { display: inline-flex; padding: 7px 10px; border-radius: 999px; margin-bottom: 12px; font-size: 12px; font-weight: 850; color: #07273a; background: linear-gradient(135deg, rgba(121,242,192,0.92), rgba(103,212,255,0.92)); }
+    .loop-visual { margin-top: 28px; padding: 22px; border-radius: 28px; background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.16); color: white; box-shadow: var(--shadow); }
+    .loop-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; align-items: center; }
+    .loop-node { min-height: 94px; border-radius: 20px; padding: 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); display: flex; flex-direction: column; justify-content: center; }
+    .loop-node strong { font-size: 15px; }
+    .loop-node span { color: #b8c7dc; font-size: 12px; line-height: 1.35; margin-top: 6px; }
+    .loop-arrow { text-align: center; color: #67d4ff; font-size: 24px; font-weight: 900; }
+    .slide.adaptive h2 { font-size: clamp(30px, 4.2vw, 54px); margin-top: 2vh; }
+    .slide.adaptive .subtitle { font-size: clamp(15px, 1.15vw, 19px); line-height: 1.35; max-width: 1160px; }
+    .slide.adaptive .learning-map { grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
+    .slide.adaptive .signal-card { min-height: 178px; padding: 16px; border-radius: 20px; }
+    .slide.adaptive .signal-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .slide.adaptive .signal-card p { font-size: 14px; line-height: 1.34; }
+    .slide.adaptive .signal-card .tag { margin-bottom: 10px; }
+    .slide.adaptive .loop-visual { margin-top: 16px; padding: 16px; }
+    .slide.adaptive .loop-node { min-height: 76px; padding: 12px; }
+    .controls { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; align-items: center; background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 12px; backdrop-filter: blur(12px); z-index: 10; }
+    button { appearance: none; border: 0; background: rgba(255,255,255,0.12); color: white; border-radius: 999px; padding: 8px 14px; font-weight: 800; cursor: pointer; }
+    button:hover { background: rgba(255,255,255,0.22); }
+    .dots { display: flex; gap: 6px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.32); }
+    .dot.active { background: var(--accent); }
+    .print-hint { position: fixed; right: 20px; bottom: 24px; font-size: 12px; color: rgba(255,255,255,0.55); z-index: 9; }
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .deck { height: auto; min-height: 100vh; }
+      .slide { position: relative; min-height: 100vh; padding: 34px 24px 80px; }
+      .slide:not(.active) { display: none; }
+      .hero-row, .grid.two, .grid.three, .grid.four, .ask-box, .learning-map, .loop-row { grid-template-columns: 1fr; }
+      .xgrid { grid-template-columns: 1fr 1fr; }
+      .flow { flex-direction: column; }
+      .arrow { transform: rotate(90deg); }
+      .layer { grid-template-columns: 1fr; }
+      .orb { width: 72vw; }
+    }
+    @media print {
+      body { overflow: visible; background: white; }
+      .deck { height: auto; background: white; }
+      .slide, .slide.active { display: flex; position: relative; page-break-after: always; height: 100vh; }
+      .controls, .print-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck">
+    <section class="slide active">
+      <div class="topbar"><div class="brand">Project Concept Pitch</div><div class="progress">1 / 10</div></div>
+      <div class="hero-row">
+        <div>
+          <div class="eyebrow">Game Marketing Agent</div>
+          <h1>Game marketing<br><span class="accent">that keeps moving</span></h1>
+          <p class="subtitle">An AI operator that learns from public knowledge, gets calibrated by experienced people, understands each game, adapts to each team, and keeps marketing work moving through a human review queue.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;">
+            <span class="pill">Planning</span><span class="pill">Market Research</span><span class="pill">Content Calendar</span><span class="pill">Community Signals</span><span class="pill">Expert Calibration</span><span class="pill">Adaptive Memory</span>
+          </div>
+        </div>
+        <div class="orb" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Problem</div><div class="progress">2 / 10</div></div>
+      <h2>The problem is not that teams ignore marketing. The problem is that few teams can <span class="accent">keep doing it well</span>.</h2>
+      <div class="grid four" style="margin-top:32px;">
+        <div class="card compact"><div class="number">1</div><h3>No dedicated operator</h3><p class="muted">Small teams rarely have a dedicated marketing or community person.</p></div>
+        <div class="card compact"><div class="number">2</div><h3>Hard prioritization</h3><p class="muted">Generic advice is easy to find. Good judgment depends on stage, platform, genre, and resources.</p></div>
+        <div class="card compact"><div class="number">3</div><h3>Scattered context</h3><p class="muted">Chat tools help, but plans, assets, versions, and feedback quickly get fragmented.</p></div>
+        <div class="card compact"><div class="number">4</div><h3>Execution drag</h3><p class="muted">Calendars, copy, community replies, summaries, and follow-ups consume real time.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Not This</div><div class="progress">3 / 10</div></div>
+      <h2>This is not an “auto-posting bot.”</h2>
+      <p class="subtitle">For this category, safety boundaries and human approval matter more than full automation.</p>
+      <div class="xgrid">
+        <div class="xcard"><div class="xmark">×</div><h3>Not pretending to be human</h3><p class="muted">The agent should not impersonate players or community members.</p></div>
+        <div class="xcard"><div class="xmark">×</div><h3>Not deciding budget</h3><p class="muted">Money, platform settings, and external commitments require approval.</p></div>
+        <div class="xcard"><div class="xmark">×</div><h3>Not a one-off prompt</h3><p class="muted">The value is persistent project memory and operating rhythm.</p></div>
+        <div class="xcard"><div class="xmark">×</div><h3>Not a 20-hour expert interview</h3><p class="muted">Experts should calibrate, review, and provide test cases.</p></div>
+        <div class="xcard"><div class="xmark">×</div><h3>Not a frozen clone</h3><p class="muted">The agent should keep learning from each project and team.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">What It Does</div><div class="progress">4 / 10</div></div>
+      <h2>We want a long-running <span class="blue">marketing operator</span>, not just another chat window.</h2>
+      <div class="grid two" style="margin-top:28px;">
+        <div class="card">
+          <h3>It helps teams move these workflows</h3>
+          <ul>
+            <li>Project intake and stage diagnosis</li>
+            <li>Comparable game research</li>
+            <li>Launch, post-launch, and campaign planning</li>
+            <li>Content calendar and platform-specific copy</li>
+            <li>Community signal and feedback summaries</li>
+            <li>Asset and version tracking</li>
+            <li>Review queue and human approval</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>It helps humans decide faster</h3>
+          <p class="muted">The early product should research, draft, organize, remind, and queue decisions. The goal is to reduce cognitive load and operational drag, not to remove human judgment.</p>
+          <div style="margin-top:22px; display:flex; gap:10px; flex-wrap:wrap;"><span class="pill">Research</span><span class="pill">Draft</span><span class="pill">Queue</span><span class="pill">Review</span><span class="pill">Learn</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Method</div><div class="progress">5 / 10</div></div>
+      <h2>Method: <span class="accent">baseline first, expert calibration second</span></h2>
+      <p class="subtitle">Start with public knowledge. Use expert time for the highest-value work: test cases, critique, scoring, and correction.</p>
+      <div class="flow">
+        <div class="card step"><span class="pill">Step 1</span><h3>Public baseline</h3><p class="muted">Docs, interviews, case studies, and platform playbooks.</p></div>
+        <div class="arrow">→</div>
+        <div class="card step"><span class="pill">Step 2</span><h3>Expert seed cases</h3><p class="muted">Questions, scenarios, rubrics, and red flags.</p></div>
+        <div class="arrow">→</div>
+        <div class="card step"><span class="pill">Step 3</span><h3>Agent answers</h3><p class="muted">The agent produces first-pass case answers.</p></div>
+        <div class="arrow">→</div>
+        <div class="card step"><span class="pill">Step 4</span><h3>Expert review</h3><p class="muted">Feedback becomes policy, rubrics, playbooks, and evals.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Knowledge Stack</div><div class="progress">6 / 10</div></div>
+      <h2>Three knowledge layers: from general ability to team-specific judgment</h2>
+      <div class="stack">
+        <div class="layer"><strong>Public Baseline</strong><p class="muted">Public resources, platform docs, industry guides, interview questions, and case libraries. Goal: act like a competent junior or mid-level marketing operator.</p></div>
+        <div class="layer"><strong>Expert-Calibrated Layer</strong><p class="muted">Seed questions, model answers, critique, scoring, and corrections from experienced people. Goal: move beyond generic advice.</p></div>
+        <div class="layer"><strong>Customer-Specific Layer</strong><p class="muted">Fetched game context, project history, team resources, campaign history, voice preferences, usage habits, and approve/reject records. Goal: become more useful to each team every week.</p></div>
+      </div>
+    </section>
+
+    <section class="slide adaptive">
+      <div class="topbar"><div class="brand">Adaptive Learning</div><div class="progress">7 / 10</div></div>
+      <h2>After delivery, it keeps learning from the actual <span class="blue">game, team, and market loop</span>.</h2>
+      <p class="subtitle">This is the compounding advantage: the agent is not a static playbook. It fetches project context, observes how people use it, and turns every review, campaign, and feedback signal into better operating memory.</p>
+      <div class="learning-map">
+        <div class="signal-card"><div class="tag">Learns the game</div><h3>From live project context</h3><p class="muted">Store pages, builds, patch notes, trailers, screenshots, characters, competitors, comments, and asset libraries become working context.</p></div>
+        <div class="signal-card"><div class="tag">Learns the team</div><h3>From real usage patterns</h3><p class="muted">It notices what the team accepts, rewrites, rejects, escalates, or repeatedly asks for — then adapts tone, cadence, and format.</p></div>
+        <div class="signal-card"><div class="tag">Learns the workflow</div><h3>From operating rhythm</h3><p class="muted">It fits around review queues, launch milestones, content calendars, approval habits, platform priorities, and real resource constraints.</p></div>
+        <div class="signal-card"><div class="tag">Learns what works</div><h3>From market feedback</h3><p class="muted">Campaign results, comments, creator feedback, CTR/CVR snapshots, and post-mortems become better policy and recommendations.</p></div>
+      </div>
+      <div class="loop-visual">
+        <div class="loop-row">
+          <div class="loop-node"><strong>Game Context</strong><span>Assets, store pages, updates, genre, audience</span></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><strong>Usage Signals</strong><span>Approvals, rewrites, asks, rejects, habits</span></div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-node"><strong>Updated Memory</strong><span>Voice, policy, playbooks, golden examples</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Expert Time</div><div class="progress">8 / 10</div></div>
+      <h2>The first ask is small: <span class="warm">high-value seed inputs</span>, not a long interview.</h2>
+      <div class="grid three" style="margin-top:34px;">
+        <div class="card"><div class="number">1</div><h3>React to the direction</h3><p class="muted">Who would this help? Where is the real value?</p></div>
+        <div class="card"><div class="number">2</div><h3>Give 3-5 test cases</h3><p class="muted">What would you ask to tell whether someone understands game marketing?</p></div>
+        <div class="card"><div class="number">3</div><h3>Share answer criteria</h3><p class="muted">What should a good answer mention? What are obvious red flags?</p></div>
+      </div>
+      <p class="subtitle" style="margin-top:28px;">Then we use those cases to generate agent answers and bring them back for review.</p>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">Calibration Loop</div><div class="progress">9 / 10</div></div>
+      <h2>Each calibration round should make improvement visible.</h2>
+      <div class="grid two" style="margin-top:28px;">
+        <div class="card">
+          <h3>What the reviewer sees</h3>
+          <ul>
+            <li>3-5 agent case answers</li>
+            <li>Where answers are generic, junior, or wrong</li>
+            <li>Missing constraints and priorities</li>
+            <li>Which decisions require human approval</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What we update afterward</h3>
+          <ul>
+            <li>Policy</li>
+            <li>Scoring rubric</li>
+            <li>Playbook and checklists</li>
+            <li>Golden cases</li>
+            <li>Before / after comparisons</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="topbar"><div class="brand">What We Need</div><div class="progress">10 / 10</div></div>
+      <h2>What would help at this stage</h2>
+      <p class="subtitle">We build the baseline first, then bring back the agent’s answers for review.</p>
+      <div class="ask-box">
+        <div class="ask-item"><div class="big">01</div><h3>A few test cases</h3><p class="muted">What questions or scenarios reveal whether someone actually understands game marketing or operations?</p></div>
+        <div class="ask-item"><div class="big">02</div><h3>A later review session</h3><p class="muted">Review the agent’s answers, point out where they sound generic, and help turn the critique into the next version.</p></div>
+      </div>
+      <p class="caption" style="margin-top:28px;">Principle: external actions stay behind human approval. Early value comes from planning, research, drafting, organization, and calibration.</p>
+    </section>
+  </main>
+
+  <div class="controls" aria-label="slide controls">
+    <button id="prev">←</button>
+    <div class="dots" id="dots"></div>
+    <button id="next">→</button>
+  </div>
+  <div class="print-hint">← / → to navigate · P to print/PDF</div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    const dots = document.getElementById('dots');
+    let index = 0;
+    slides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => show(i));
+      dots.appendChild(d);
+    });
+    function show(i) {
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      slides.forEach((s, n) => s.classList.toggle('active', n === index));
+      [...dots.children].forEach((d, n) => d.classList.toggle('active', n === index));
+    }
+    document.getElementById('prev').onclick = () => show(index - 1);
+    document.getElementById('next').onclick = () => show(index + 1);
+    document.addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) show(index + 1);
+      if (['ArrowLeft', 'PageUp', 'Backspace'].includes(e.key)) show(index - 1);
+      if (e.key.toLowerCase() === 'p') window.print();
+    });
+  </script>
+</body>
+</html>
