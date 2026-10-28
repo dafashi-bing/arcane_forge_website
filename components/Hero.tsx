@@ -47,12 +47,15 @@ export default function Hero() {
             </Link>
             
             <Link
-              href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases"
-              target="_blank"
+              href="/contact"
               className="inline-flex justify-center items-center px-8 py-4 rounded-full text-base font-bold border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300 text-gray-900 dark:text-white"
             >
-              Download Desktop
+              Discuss your project
             </Link>
+          </div>
+          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
+            <Link href="/ai-services" className="hover:text-blue-600 dark:hover:text-blue-400 underline underline-offset-4">AI services for your game</Link>
+            <a href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 underline underline-offset-4">Download Desktop</a>
           </div>
         </div>
 

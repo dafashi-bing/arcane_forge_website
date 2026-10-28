@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
   const supabase = createClient();
   const router = useRouter();
@@ -59,11 +60,12 @@ export default function Header() {
           </Link>
         </div>
         
-        <nav className="hidden md:flex items-center space-x-8">
-          {['Games', 'Pricing', 'Docs', 'Blog', 'About'].map((item) => (
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-5">
+          {['AI Services', 'Games', 'Pricing', 'Docs', 'Blog', 'About'].map((item) => (
             <Link 
               key={item}
               href={
+                item === 'AI Services' ? "/ai-services" :
                 item === 'Docs' ? "https://docs.arcaneforge.ai" : 
                 item === 'Games' ? "https://games.arcaneforge.ai/" :
                 `/${item.toLowerCase()}`
@@ -80,9 +82,9 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <Link 
             href="/contact" 
-            className="hidden sm:block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+            className="hidden xl:block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
           >
-            Contact
+            Discuss your project
           </Link>
 
           {user ? (
@@ -115,8 +117,28 @@ export default function Header() {
           </Link>
           
           <ThemeSwitch />
+          <button
+            type="button"
+            className="lg:hidden text-sm font-medium text-gray-700 dark:text-gray-200 p-2"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? 'Close' : 'Menu'}
+          </button>
         </div>
       </div>
+      {menuOpen && (
+        <nav id="mobile-navigation" aria-label="Mobile navigation" className="lg:hidden flex flex-wrap gap-x-6 gap-y-4 px-6 py-5 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 text-sm text-gray-700 dark:text-gray-200">
+          <Link href="/ai-services" onClick={() => setMenuOpen(false)}>AI Services</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}>Discuss your project</Link>
+          <a href="https://games.arcaneforge.ai/">Games</a>
+          <Link href="/pricing" onClick={() => setMenuOpen(false)}>Pricing</Link>
+          <a href="https://docs.arcaneforge.ai" target="_blank" rel="noopener noreferrer">Docs</a>
+          <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}>About</Link>
+        </nav>
+      )}
     </header>
   );
 }

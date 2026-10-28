@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FaLightbulb, FaTools, FaTruckLoading, FaChartLine, FaUnity, FaReact } from "react-icons/fa";
 import { SiUnrealengine, SiGodotengine } from "react-icons/si";
 
@@ -38,6 +39,19 @@ const Workflow = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
             Seamlessly fits your workflow
           </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20">
+          <div className="rounded-2xl bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-7">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Build in Studio</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-5">Use the Studio workspace and guided workflows, including the embedded agent, to bring your game together.</p>
+            <a href="https://app.arcaneforge.ai/" target="_blank" rel="noopener noreferrer" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Try the platform →</a>
+          </div>
+          <div className="rounded-2xl bg-white dark:bg-black border border-gray-200 dark:border-gray-800 p-7">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Bring your coding agent</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-5">Install the Arcane Forge game-agent skill in Codex to connect planning and local code work with Arcane Forge projects and assets. Portable instructions and helpers also support Claude Code and OpenCode workflows.</p>
+            <Link href="/agent-skill" className="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Set up the agent skill →</Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">

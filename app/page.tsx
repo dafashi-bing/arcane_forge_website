@@ -8,6 +8,7 @@ import DemoVideo from "components/DemoVideo";
 import EarlyAccessCTA from "components/EarlyAccessCTA";
 import Resources from "components/Resources";
 import Footer from "components/Footer";
+import AIServicesIntro from "components/AIServicesIntro";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <AIServicesIntro />
         <GameShowcase />
         <Features />
         <Workflow />

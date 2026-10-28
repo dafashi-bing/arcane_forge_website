@@ -19,6 +19,11 @@ const Footer = () => {
             <h3 className="font-bold text-gray-900 dark:text-white mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/ai-services" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  AI Services for Game Studios
+                </Link>
+              </li>
+              <li>
                 <Link href="https://app.arcaneforge.ai/" target="_blank" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   Web Version (Beta)
                 </Link>
@@ -29,7 +34,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/games" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                <Link href="https://games.arcaneforge.ai/" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   Showcase Games
                 </Link>
               </li>
@@ -62,6 +67,11 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-gray-900 dark:text-white mb-4">Resources</h3>
             <ul className="space-y-2">
+              <li>
+                <Link href="/agent-skill" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                  Agent Skill Setup
+                </Link>
+              </li>
               <li>
                 <a href="https://docs.arcaneforge.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   Docs
