@@ -36,26 +36,25 @@ export default function Hero() {
             Stop gambling with random prompts. Build real games with engineering precision. From Game Design to Code, Art, Sound, and Analytics — all in one pipeline.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up">
-            <Link
-              href="https://app.arcaneforge.ai/"
-              target="_blank"
-              className="group relative inline-flex justify-center items-center px-8 py-4 text-base font-bold text-white bg-black dark:bg-white dark:text-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 dark:hover:shadow-white/25"
-            >
-              <span className="relative z-10">Try Web Version (Beta)</span>
-              <div className="absolute inset-0 -z-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-4 animate-fade-in-up">
+            <div className="flex flex-col items-center gap-5">
+              <Link
+                href="https://app.arcaneforge.ai/"
+                target="_blank"
+                className="group relative inline-flex justify-center items-center px-8 py-4 text-base font-bold text-white bg-black dark:bg-white dark:text-black rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 dark:hover:shadow-white/25"
+              >
+                <span className="relative z-10">Try Web Version (Beta)</span>
+                <div className="absolute inset-0 -z-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+              <a href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 underline underline-offset-4">Download Desktop</a>
+            </div>
             
             <Link
-              href="/contact"
+              href="/ai-services"
               className="inline-flex justify-center items-center px-8 py-4 rounded-full text-base font-bold border-2 border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 bg-white dark:bg-black hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300 text-gray-900 dark:text-white"
             >
-              Discuss your project
+              Add AI to your game
             </Link>
-          </div>
-          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <Link href="/ai-services" className="hover:text-blue-600 dark:hover:text-blue-400 underline underline-offset-4">AI services for your game</Link>
-            <a href="https://github.com/arcane-forge-ai/arcane-forge-studio/releases" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 dark:hover:text-blue-400 underline underline-offset-4">Download Desktop</a>
           </div>
         </div>
 
