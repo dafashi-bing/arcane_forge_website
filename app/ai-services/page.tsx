@@ -39,6 +39,28 @@ export default function AIServicesPage() {
       </div>
     </div></section>
 
+    <section className="why-section section-shell" id="why-arcane-forge" aria-labelledby="why-title">
+      <div className="why-copy">
+        <p className="eyebrow">WHY ARCANE FORGE</p>
+        <h2 id="why-title">Deep AI experience.<br /><em>A game creator’s perspective.</em></h2>
+        <p className="why-intro">Our team brings more than a decade of experience building AI platforms and delivering AI solutions across industries.</p>
+        <p className="why-application">We bring that experience to your game: AI capabilities shaped around your mechanics and creative direction, controls your designers can tune, and a clear path from evaluation to integration.</p>
+      </div>
+      <div className="why-strip">
+        <p className="why-strip-label">TEAM EXPERIENCE<br />&amp; EDUCATION</p>
+        <ul className="why-logos" aria-label="Our team’s professional backgrounds and education">
+            <li><img className="why-logo-expedia" src="/ai-services/logos/expedia.svg" alt="Expedia — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-microsoft" src="/ai-services/logos/microsoft.png" alt="Microsoft — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-tiktok" src="/ai-services/logos/tiktok.png" alt="TikTok — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-alibaba" src="/ai-services/logos/alibaba.png" alt="Alibaba — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-mihoyo" src="/ai-services/logos/mihoyo.png" alt="miHoYo — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-tencent" src="/ai-services/logos/tencent.png" alt="Tencent — prior team professional experience" width="200" height="64" /></li>
+            <li><img className="why-logo-uw" src="/ai-services/logos/uw.svg" alt="University of Washington — team education in computer science" width="200" height="64" /></li>
+            <li><img className="why-logo-usc" src="/ai-services/logos/usc.svg" alt="University of Southern California — team education in game design" width="200" height="64" /></li>
+        </ul>
+      </div>
+    </section>
+
     <section className="proof-workflow section-shell native-method" aria-labelledby="proof-workflow-title"><div className="proof-workflow-heading"><p className="eyebrow">THE ARCANE FORGE ADVANTAGE</p><h2 id="proof-workflow-title">More than<br /><em>the AI capability.</em></h2></div><div className="proof-workflow-steps"><article><span className="tiny-label">01 / TRY AI</span><h3>Try it before<br />you integrate it.</h3><p>A private sandbox mirrors the relevant game logic, so your team can review the look, feel, and behavior before it goes into the game.</p></article><article><span className="tiny-label">02 / TUNE BEHAVIOR</span><h3>Give designers<br />real control.</h3><p>We agree the prompt and configuration controls for your feature. Designers and writers can refine the behavior during review and keep tuning after handoff.</p></article><article><span className="tiny-label">03 / SIMULATE &amp; REVIEW</span><h3>Review behavior<br />across runs.</h3><p>Headless simulations and reports help your team review choices, generated content, outcomes, and rule checks across many scenarios.</p></article></div></section>
 
     <section className="work-section section-shell" id="work" aria-labelledby="work-title">

@@ -1,0 +1,77 @@
+{
+  "scope": "Production website team-experience section; deployment authorized by user",
+  "request": "Single subdued monochrome logo strip below team introduction; Expedia, Microsoft, TikTok, Alibaba, miHoYo, Tencent, UW and USC.",
+  "assets": [
+    {
+      "file": "expedia.svg",
+      "company": "Expedia Group",
+      "sourcePage": "https://expediagroup.com/en-us",
+      "sourceAsset": "https://www.expediagroup.com/content/experience-fragments/expediagroup/live-copies/en-us/header/master/_jcr_content/root/header/logo.coreimg.svg/1779134972973/expedia-group-logo-24.svg",
+      "sha256": "dd6124090821956f01b75ccabae1ed201cf13a4f90ee06e783db7c58fadf87b5",
+      "bytes": 5259
+    },
+    {
+      "file": "tiktok.png",
+      "company": "TikTok",
+      "sourcePage": "https://developers.tiktok.com/docs/en/getting-started-design-guidelines",
+      "sourceAsset": "https://sf16-va.tiktokcdn.com/obj/eden-va2/uvzhqeh7nuhd/tt4d/logo-pack.zip",
+      "archiveEntry": "Dev Portal Logo Pack/TikTok Logo Pack/TikTok \u0393\u00c7\u00f4 Logo \u0393\u00c7\u00f4 PNG [RGB]/Horizontal/TikTok-logo-RGB-Horizontal-black.png",
+      "sha256": "47b2f6116c86a6d041d17e766d6a4209bd3b9e0645853568f66a7c230d934715",
+      "bytes": 315577
+    },
+    {
+      "file": "alibaba.png",
+      "company": "Alibaba",
+      "sourcePage": "https://www.alibabagroup.com/en-US/",
+      "sourceAsset": "Official footer inline PNG with alt logo",
+      "sha256": "c2cb4773c5bbebafa1724c872fe7d3d662a143f72d7bb55933ab53efb27968ce",
+      "bytes": 9146
+    },
+    {
+      "file": "mihoyo.png",
+      "company": "miHoYo",
+      "sourcePage": "https://www.mihoyo.com/",
+      "sourceAsset": "https://www.mihoyo.com/_nuxt/ca7e4d8.js",
+      "detail": "Official embedded white miHoYo image used by mobile no-background header",
+      "sha256": "9e7e8a6f68fad9b5c5c064293ac09bb34272c9437d1f6a46c9c2e03a3f30c69c",
+      "bytes": 6124
+    },
+    {
+      "file": "uw.svg",
+      "company": "University of Washington",
+      "sourcePage": "https://www.washington.edu/",
+      "sourceAsset": "https://uw.edu/static/hometemp/wp-content/themes/uw_home_theme/assets/svg/logo-lockup.svg",
+      "relationship": "Team education in computer science",
+      "sha256": "cb5873daabb64e0c4a3d808feb94d422fb65cc3cae2a4a142f199a5ee6e522d4",
+      "bytes": 7689
+    },
+    {
+      "file": "usc.svg",
+      "company": "University of Southern California",
+      "sourcePage": "https://www.usc.edu/",
+      "sourceAsset": "Public homepage inline SVG with viewBox 0 0 178 58",
+      "relationship": "Team education in game design",
+      "sha256": "f69401ece2dba4a7bad043db4e6b84b703da8f3eedc9ff6972fd7b69b59a7d99",
+      "bytes": 14156
+    },
+    {
+      "file": "microsoft.png",
+      "company": "Microsoft",
+      "sourcePage": "https://www.microsoft.com/",
+      "sourceAsset": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+      "relationship": "Team prior professional experience",
+      "sha256": "112fec798b78aa02e102a724b5cb1990c0f909bc1d8b7b1fa256eab41bbc0960",
+      "bytes": 4054
+    },
+    {
+      "file": "tencent.png",
+      "company": "Tencent",
+      "sourcePage": "https://www.tencent.com/newsroom/media-resources/logos/",
+      "sourceAsset": "https://www.tencent.com/wp-content/uploads/2022/12/03_Tencent_English-logo_Black.png",
+      "relationship": "Team prior professional experience",
+      "sha256": "370a7af701afc6c3d6673eecbd768ec426956ff241b920e04012374600fba5c6",
+      "bytes": 41276
+    }
+  ],
+  "displayNotes": "Original source artwork retained. Muted monochrome display uses CSS, with transparent-canvas sizing for TikTok and Tencent. Labels describe team prior professional experience and education."
+}
