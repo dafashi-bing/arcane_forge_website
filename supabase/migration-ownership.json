@@ -1,0 +1,37 @@
+{
+  "project_ref": "nydmouxljprsfymcvqko",
+  "owner": "/Users/binggan/new_start/arcane_forge_website",
+  "previous_owner": "/Users/binggan/new_start/arcane_forge_games",
+  "legacy_migration_sha256": {
+    "20241213000001_initial_schema.sql": "1fa5fb7aa187933a59e64f64c6922403a407fc52c1a80e0bacb3305c0b0f88f0",
+    "20241213000002_add_game_url.sql": "c51208f26a0398d918ec622a525903cc888c25bedfafca40442f652d5bcbed73",
+    "20241213000003_atomic_stats_functions.sql": "2da882650df7676d9530ba9a9d47f8ea114f32ae8c1e8c7bad5d2da682f035a6",
+    "20260826000003_add_playtest_signups.sql": "6b03d7d877d11bdcc22af71f586f16bf167a3d48a82315792ff1eb2219bdb92c"
+  },
+  "local_seed": "disabled; game fixtures remain in games repository",
+  "stage1_verified": {
+    "legacy_files_byte_identical": true,
+    "live_versions_match": true,
+    "dry_run": "Remote database is up to date.",
+    "local_rebuild": "PostgreSQL 15 isolated container; all four migrations succeeded",
+    "seed_disabled": true,
+    "remote_sql_statement_comparison": "All four match after whitespace/comment normalization; source file bytes preserved exactly"
+  },
+  "crm_review": {
+    "migration": "20261030020000_private_crm.sql",
+    "sha256": "28c8007da87d37dd08d65e2a1c10885d528d50a5f34d791924dc1379fdf8f0ae",
+    "hosted_status": "applied; scoped login provisioned; hosted workflow, import, replay and cutover verified",
+    "scope": "crm_agent for Bing and assistant; private crm.command only; no direct table access",
+    "hosted_verified_at": "2026-10-30T05:15:04.887Z",
+    "import_id": "7e8a2716-3477-4653-a93c-45e7d3410c30"
+  },
+  "crm_web_review": {
+    "migration": "20261030030000_private_crm_web_reader.sql",
+    "sha256": "5abc3eebb68b5e1d4ddc16bbf64cec7eb9023b5ec1839b1357702a72ffbb5aff",
+    "hosted_status": "applied; dedicated crm_web login provisioned; actual TLS/read-only reads and web/agent/anonymous/customer boundaries verified",
+    "scope": "crm_web executes only private crm.web_read fixed read dispatch; no direct tables or agent command; website verified identity allowlist on every read",
+    "hosted_verified_at": "2026-10-30T06:58:55.768Z",
+    "hosted_history_records": 1,
+    "scope_memberships": 0
+  }
+}

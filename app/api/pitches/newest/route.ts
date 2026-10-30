@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const { blobs } = await list({
+      token: process.env.BLOB_READ_WRITE_TOKEN,
       prefix: 'pitches/',
     });
 
@@ -12,7 +13,7 @@ export async function GET() {
     }
 
     // Sort by uploadedAt in memory since the API doesn't support sorting
-    const newestBlob = blobs.sort((a, b) => 
+    const newestBlob = blobs.sort((a, b) =>
       new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime()
     )[0];
 
@@ -30,4 +31,4 @@ export async function GET() {
       { status: 500 }
     );
   }
-} 
+}

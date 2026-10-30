@@ -1,19 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
-export default function PitchPage({
-  params,
-}: {
-  params: { pathname: string };
-}) {
+export default function PitchPage() {
   const router = useRouter();
+  const { pathname } = useParams<{ pathname: string }>();
 
   useEffect(() => {
     const fetchPitch = async () => {
       try {
-        const response = await fetch(`/api/pitches/${encodeURIComponent(params.pathname)}`);
+        const response = await fetch(`/api/pitches/${encodeURIComponent(pathname)}`);
         const data = await response.json();
         if (data.url) {
           // Redirect to the file's public URL
@@ -28,7 +25,7 @@ export default function PitchPage({
     };
 
     fetchPitch();
-  }, [params.pathname, router]);
+  }, [pathname, router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center">

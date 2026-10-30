@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { approvedIdeCallback } from "@/lib/site-privacy.mjs";
 
 function IdeCompletePageContent() {
   const searchParams = useSearchParams();
@@ -29,12 +30,10 @@ function IdeCompletePageContent() {
         return;
       }
 
-      let callbackUrl: URL;
-      try {
-        callbackUrl = new URL(extCallback);
-      } catch {
+      const callbackUrl = approvedIdeCallback(extCallback, state);
+      if (!callbackUrl) {
         if (!isCancelled) {
-          setError("The IDE callback URL is invalid. Please retry sign-in from VS Code.");
+          setError("This IDE sign-in callback is not supported. Start sign-in from the Arcane Forge extension in VS Code or Cursor.");
         }
         return;
       }

@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { approvedIdeCallback, safeLocalPath } from "@/lib/site-privacy.mjs";
 
 function LoginPageContent() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function LoginPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const nextParam = searchParams.get("next") ?? "/";
-  const safeNextPath = nextParam.startsWith("/") ? nextParam : "/";
+  const safeNextPath = safeLocalPath(nextParam);
   const extCallback = searchParams.get("ext_callback");
   const state = searchParams.get("state");
 
@@ -27,15 +28,16 @@ function LoginPageContent() {
     options?: { includeNext?: boolean; absolute?: boolean }
   ) => {
     const { includeNext = false, absolute = false } = options ?? {};
-    const safeTargetPath = targetPath.startsWith("/") ? targetPath : "/";
+    const safeTargetPath = safeLocalPath(targetPath);
     const url = new URL(safeTargetPath, window.location.origin);
 
     if (includeNext) {
       url.searchParams.set("next", safeNextPath);
     }
 
-    if (extCallback) {
-      url.searchParams.set("ext_callback", extCallback);
+    const ideCallback = approvedIdeCallback(extCallback, state);
+    if (ideCallback) {
+      url.searchParams.set("ext_callback", ideCallback.toString());
     }
 
     if (state) {
@@ -51,6 +53,10 @@ function LoginPageContent() {
 
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (extCallback && !approvedIdeCallback(extCallback, state)) {
+      setError("This IDE sign-in callback is not supported. Start sign-in from the Arcane Forge extension in VS Code or Cursor.");
+      return;
+    }
     setLoading(true);
     setError(null);
 

@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const { blobs } = await list({
+      token: process.env.BLOB_READ_WRITE_TOKEN,
       prefix: 'pitches/',
     });
 
@@ -21,4 +22,4 @@ export async function GET() {
       { status: 500 }
     );
   }
-} 
+}

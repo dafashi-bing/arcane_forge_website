@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "crm": "node scripts/crm.mjs",
+    "test:crm": "node --test tests/crm.test.mjs tests/crm-provision.test.mjs scripts/crm-prepare-import.test.mjs",
+    "test:crm:web": "node --test tests/crm-web.test.mjs tests/crm-web-provision.test.mjs tests/crm-web-migration-review.test.mjs tests/crm-web-fetch.test.mjs tests/crm-web-http.test.mjs tests/crm-web-search-privacy.test.mjs tests/crm-privacy.test.mjs",
+    "test:crm:web:http": "node scripts/crm-web-test-http.mjs --verify",
+    "test:crm:web:bundle": "node scripts/crm-web-scan-client.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -14,23 +19,36 @@
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.90.1",
     "@vercel/analytics": "^1.5.0",
-    "@vercel/blob": "^1.0.0",
+    "@vercel/blob": "2.8.2",
     "gray-matter": "^4.0.3",
-    "next": "^14.2.15",
-    "next-mdx-remote": "^6.0.0",
-    "next-themes": "^0.3.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "next": "15.5.28",
+    "next-mdx-remote": "6.0.0",
+    "next-themes": "0.4.6",
+    "pg": "^8.16.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "react-icons": "^5.3.0",
     "stripe": "^20.2.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "22.7.5",
-    "@types/react": "18.3.11",
+    "@types/react": "19.3.0",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
+    "postcss": "8.5.32",
     "tailwindcss": "^3.4.14",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "@types/react-dom": "19.3.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "$postcss"
+    },
+    "@vercel/cli-config": {
+      "zod": "4.6.6"
+    },
+    "@tailwindcss/typography": {
+      "postcss-selector-parser": "6.1.5"
+    }
   }
 }

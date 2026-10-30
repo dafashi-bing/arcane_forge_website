@@ -25,3 +25,10 @@ Thumbs.db
 # Build artifacts
 /build
 /dist
+
+# Local Supabase state and private CRM evidence/credentials
+supabase/.temp/
+supabase/.branches/
+.env.crm.local
+.env.crm-web.local
+.crm/

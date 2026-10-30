@@ -1,7 +1,8 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { createDeadlineFetch } from './timeout-fetch.mjs'
 
-export async function updateSession(request: NextRequest) {
+export async function updateSession(request: NextRequest, options: { fetchTimeoutMs?: number } = {}) {
   let response = NextResponse.next({
     request: {
       headers: request.headers,
@@ -12,6 +13,9 @@ export async function updateSession(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      ...(options.fetchTimeoutMs === undefined ? {} : {
+        global: { fetch: createDeadlineFetch(options.fetchTimeoutMs) },
+      }),
       cookies: {
         get(name: string) {
           return request.cookies.get(name)?.value

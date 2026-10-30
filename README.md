@@ -1,3 +1,15 @@
+# Arcane Forge website
+
+This repository owns schema migrations for Supabase project `nydmouxljprsfymcvqko`.
+
+- [Private CRM commands and operations](docs/crm.md) · [HTML](docs/crm.html)
+- [Protected CRM website and access](docs/crm-web.md) · [HTML](docs/crm-web.html)
+- [Migration ownership and deployment](docs/supabase-migrations.md) · [HTML](docs/supabase-migrations.html)
+
+CRM and migration commands run locally; public site deployment is separate.
+
+---
+
 # Free Next JS Starter Template
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/templates/Next.js/next-js-saas-website-starter)

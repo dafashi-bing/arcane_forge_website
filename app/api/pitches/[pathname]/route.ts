@@ -3,11 +3,13 @@ import { NextResponse } from 'next/server';
 
 export async function GET(
   request: Request,
-  { params }: { params: { pathname: string } }
+  { params }: { params: Promise<{ pathname: string }> }
 ) {
   try {
+    const { pathname: requestedPathname } = await params;
     const { blobs } = await list({
-      prefix: `pitches/${decodeURIComponent(params.pathname)}`,
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+      prefix: `pitches/${decodeURIComponent(requestedPathname)}`,
       limit: 1,
     });
 
@@ -32,4 +34,4 @@ export async function GET(
       { status: 500 }
     );
   }
-} 
+}
