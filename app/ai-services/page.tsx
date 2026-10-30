@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import ServicesGallery from "components/ai-services/ServicesGallery";
+import CapabilityShowcase from "components/ai-services/CapabilityShowcase";
 import "./services.css";
 
 export const metadata: Metadata = {
   title: "AI Services for Game Studios | Arcane Forge",
-  description: "Custom AI services for games: NPC dialogue, dialogue-generated buffs, stories, and progression. Built with your studio and delivered as the agreed code, integration, or service.",
+  description: "Custom AI for gameplay, player experiences, and game production. Built with your studio and delivered as the agreed code, integration, or service.",
   alternates: { canonical: "https://arcaneforge.ai/ai-services" },
 };
 
@@ -21,8 +22,8 @@ export default function AIServicesPage() {
       <div className="hero-copy">
         <p className="eyebrow">CUSTOM AI SERVICES FOR GAME STUDIOS</p>
         <h1 id="hero-title">AI services<br />built for<br /><em>your game.</em></h1>
-        <p className="hero-description">We build custom AI for NPC conversations, dialogue-generated buffs, storylines, and other gameplay features. Bring your game, a rough idea, or a detailed design. We learn what you need, build and tune the solution with your team, and deliver it in the form that fits your game.</p>
-        <div className="hero-actions"><a className="button button-primary" href="#work">Explore the possibilities <span aria-hidden="true">↓</span></a><a className="text-link" href="#contact">Tell us about your game <span aria-hidden="true">↗</span></a></div>
+        <p className="hero-description">We build custom AI for gameplay, player experiences, and game production. Bring your game, a rough idea, or a detailed design. We learn what you need, build and tune the solution with your team, and deliver it in the form that fits your game.</p>
+        <div className="hero-actions"><a className="button button-primary" href="#capabilities">Explore the possibilities <span aria-hidden="true">↓</span></a><a className="text-link" href="#contact">Tell us about your game <span aria-hidden="true">↗</span></a></div>
       </div>
       <div className="hero-proof">
         <video className="hero-video" id="hero-video" controls autoPlay muted loop playsInline preload="metadata" poster="/ai-services/assets/npc-buff-sandbox-poster.webp" width="2134" height="1440" aria-label="NPC dialogue and AI Buff sandbox demonstration"><source src="/ai-services/assets/npc-buff-sandbox-demo.mp4" type="video/mp4" /><a href="/ai-services/assets/npc-buff-sandbox-demo.mp4">Watch the NPC dialogue and AI Buff sandbox.</a></video>
@@ -60,6 +61,8 @@ export default function AIServicesPage() {
         </ul>
       </div>
     </section>
+
+    <CapabilityShowcase />
 
     <section className="proof-workflow section-shell native-method" aria-labelledby="proof-workflow-title"><div className="proof-workflow-heading"><p className="eyebrow">THE ARCANE FORGE ADVANTAGE</p><h2 id="proof-workflow-title">More than<br /><em>the AI capability.</em></h2></div><div className="proof-workflow-steps"><article><span className="tiny-label">01 / TRY AI</span><h3>Try it before<br />you integrate it.</h3><p>A private sandbox mirrors the relevant game logic, so your team can review the look, feel, and behavior before it goes into the game.</p></article><article><span className="tiny-label">02 / TUNE BEHAVIOR</span><h3>Give designers<br />real control.</h3><p>We agree the prompt and configuration controls for your feature. Designers and writers can refine the behavior during review and keep tuning after handoff.</p></article><article><span className="tiny-label">03 / SIMULATE &amp; REVIEW</span><h3>Review behavior<br />across runs.</h3><p>Headless simulations and reports help your team review choices, generated content, outcomes, and rule checks across many scenarios.</p></article></div></section>
 
