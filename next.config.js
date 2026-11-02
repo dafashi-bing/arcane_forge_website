@@ -2,6 +2,11 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      { source: '/checkmate/pitch', destination: '/checkmate/pitch/index.html' },
+    ];
+  },
   async headers() {
     // Also cover framework-generated 404/405/error responses under this area.
     const headers = [
