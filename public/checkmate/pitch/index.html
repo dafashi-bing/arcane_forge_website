@@ -358,8 +358,8 @@
     .revenue-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:34px; }
     .revenue-card { min-height:190px; padding:20px; border:1px solid var(--line); background:rgba(255,255,255,.025); }
     .revenue-icon { color:var(--gold); font:500 34px/1 Georgia,serif; }
-    .revenue-card h3 { margin:34px 0 8px; font-size:18px; }
-    .revenue-card p { margin:0; color:var(--muted); font-size:13px; line-height:1.4; }
+    .revenue-card h3 { display:flex; align-items:center; gap:10px; margin:0 0 10px; font-size:18px; }
+    .revenue-card ul { display:grid; gap:4px; margin:0; padding-left:1.2em; color:var(--muted); font-size:14px; line-height:1.35; }
     .platform-line { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:26px; padding:16px 18px; border-left:2px solid var(--teal); background:rgba(111,210,194,.055); }
     .platform-line strong { color:var(--teal); font-size:12px; letter-spacing:.1em; text-transform:uppercase; }
 
@@ -491,7 +491,6 @@
       .squad { margin-top:8px; }
       .revenue-grid { margin-top:18px; }
       .revenue-card { min-height:140px; padding:15px; }
-      .revenue-card h3 { margin:18px 0 5px; }
       .platform-line { margin-top:14px; padding:12px 15px; }
       .timeline { margin-top:20px; }
       .month-dot { margin-bottom:14px; }
@@ -578,7 +577,8 @@
       .project-title { font-size:clamp(52px,17vw,82px); }
       .grid-4, .revenue-grid { grid-template-columns:1fr; }
       .revenue-card { min-height:120px; padding:16px; }
-      .revenue-card h3 { margin:12px 0 5px; }
+      .revenue-icon { font-size:26px; }
+      .revenue-card h3 { margin-bottom:8px; }
       .battlefield-grid, .country-grid { grid-template-columns:1fr; }
       .mode-gallery { grid-template-columns:1fr; }
       .stat-card { min-height:145px; }
@@ -751,11 +751,27 @@
 
     <section class="slide" id="commercial" data-number="08" data-title="Two commercial models">
       <div class="slide-inner">
-        <div class="eyebrow">Commercial strategy</div>
+        <div class="eyebrow">Commercial options</div>
         <h2>Two <span class="accent">commercial models.</span></h2>
         <div class="revenue-grid">
-          <article class="revenue-card"><span class="revenue-icon" aria-hidden="true">♟</span><h3>Premium</h3><p>Players buy the base game.</p></article>
-          <article class="revenue-card"><span class="revenue-icon" aria-hidden="true">↻</span><h3>GaaS</h3><p>An ongoing game service with regular updates.</p></article>
+          <article class="revenue-card">
+            <h3><span class="revenue-icon" aria-hidden="true">♟</span>Premium</h3>
+            <ul>
+              <li>Paid base game</li>
+              <li>Included AI campaign allowance</li>
+              <li>Possible story DLC</li>
+              <li>Possible monthly AI subscription for more campaign play</li>
+            </ul>
+          </article>
+          <article class="revenue-card">
+            <h3><span class="revenue-icon" aria-hidden="true">↻</span>GaaS</h3>
+            <ul>
+              <li>Free base game</li>
+              <li>Limited AI campaign play for free players</li>
+              <li>Battle pass with unlimited AI campaign play, subject to fair use</li>
+              <li>Possible bonus story chapters with the pass</li>
+            </ul>
+          </article>
         </div>
         <div class="platform-line">We’ll choose the commercial model with our publishing partner.</div>
       </div>
@@ -937,8 +953,24 @@
         <div class="eyebrow">Appendix A8 · Commercial options</div>
         <h2>Two models <span class="accent">to evaluate.</span></h2>
         <div class="revenue-grid">
-          <article class="revenue-card"><span class="revenue-icon" aria-hidden="true">♟</span><h3>Premium</h3><p>Players buy the base game.</p></article>
-          <article class="revenue-card"><span class="revenue-icon" aria-hidden="true">↻</span><h3>GaaS</h3><p>An ongoing game service with regular updates.</p></article>
+          <article class="revenue-card">
+            <h3><span class="revenue-icon" aria-hidden="true">♟</span>Premium</h3>
+            <ul>
+              <li>Paid base game</li>
+              <li>Included AI campaign allowance</li>
+              <li>Possible story DLC</li>
+              <li>Possible monthly AI subscription for more campaign play</li>
+            </ul>
+          </article>
+          <article class="revenue-card">
+            <h3><span class="revenue-icon" aria-hidden="true">↻</span>GaaS</h3>
+            <ul>
+              <li>Free base game</li>
+              <li>Limited AI campaign play for free players</li>
+              <li>Battle pass with unlimited AI campaign play, subject to fair use</li>
+              <li>Possible bonus story chapters with the pass</li>
+            </ul>
+          </article>
         </div>
         <div class="platform-line">We’ll choose the commercial model with our publishing partner.</div>
       </div>
